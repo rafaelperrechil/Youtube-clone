@@ -1,6 +1,10 @@
 
 import React from 'react';
-import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core';
+import { 
+  makeStyles,
+  ThemeProvider,
+  createMuiTheme 
+} from '@material-ui/core';
 import Home from './Home';
 
 // import { makeStyles } from '@material-ui/core/styles';
