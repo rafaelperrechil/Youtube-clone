@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   makeStyles,
   ThemeProvider,
@@ -16,20 +16,28 @@ const useStyles = makeStyles({
 });
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
   const theme = createMuiTheme({
     palette: {
+      type: darkMode ? 'dark' : 'light',
       primary: {
-        main: '#000'
+        main: darkMode ? '#232323' : '#fff',
       },
       secondary: {
-        main: '#065fd4'
+        main: '#3EA6FF'
+      },
+      background:{
+        defaul:  darkMode ? '#232323' : '#fff',
+        dark:  darkMode ? '#181818' : '#fff',
+        paper:  darkMode ? '#232323' : '#fff',
       }
     }
   });
 
   return (
     <ThemeProvider theme={theme} >
-      <Home />
+      <Home darkMode={darkMode} setDarkMode={setDarkMode}/>
       
     </ThemeProvider>
   );
